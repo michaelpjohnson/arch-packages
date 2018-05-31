@@ -1,0 +1,5 @@
+.idea/
+*.xz
+src
+pkg
+*.zip

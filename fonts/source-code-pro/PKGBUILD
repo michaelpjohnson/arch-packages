@@ -2,16 +2,16 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=adobe-source-code-pro-fonts
-pkgver=2.030ro+1.050it
-_relver=2.010R-ro/1.030R-it
-pkgrel=3
+pkgver=1.0.0
+_relver=1.0.0
+pkgrel=1
 pkgdesc="Monospaced font family for user interface and coding environments"
 url="https://adobe-fonts.github.io/source-code-pro/"
 arch=(any)
 license=(custom)
-_tarname=source-code-pro-${_relver//\//-}
-source=("$_tarname.tar.gz::https://github.com/adobe-fonts/source-code-pro/archive/$_relver.tar.gz")
-sha256sums=('3ee5a0d04e6586f12de038cb33ec963f137bbc4907ae1e10a6333478a2b884f8')
+_tarname=source-code-pro
+source=("$_tarname.zip::https://mpjcode.com/fonts/$_tarname-$_relver.zip")
+sha256sums=('38bfc0416534ce00ad718409a5a5717883a743e534c1177eb8c459c853087d8f')
 
 package() {
   cd $_tarname
