@@ -1,0 +1,23 @@
+# $Id$
+# Maintainer: Michael Johnson <michaelpjohnson@gmail.com>
+
+pkgname=nunito-fonts
+pkgver=1.0.0
+_relver=1.0.0
+pkgrel=1
+pkgdesc="Nunito is a well balanced sans serif typeface superfamily"
+_tarname=Nunito
+url="https://fonts.google.com/specimen/$_tarname"
+arch=(any)
+license=(custom)
+source=("$_tarname.zip::https://mpjcode.com/fonts/$_tarname-$_relver.zip")
+sha256sums=('84a82cfe9ac1a728439fea990db2258043a89c07d8b58fef3d1fcee8e4026086')
+
+package() {
+  cd $_tarname
+  install -d "$pkgdir/usr/share/fonts/${pkgname%-fonts}"
+  install -t "$pkgdir/usr/share/fonts/${pkgname%-fonts}" -m644 *.ttf
+  install -Dm644 OFL.txt "$pkgdir/usr/share/licenses/$pkgname/OFL.txt"
+}
+
+# vim:set ts=2 sw=2 et:
