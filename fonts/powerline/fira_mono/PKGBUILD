@@ -1,0 +1,22 @@
+# $Id$
+# Maintainer: Michael Johnson <michaelpjohnson@gmail.com>
+
+pkgname=fira_mono_powerline-fonts
+pkgver=1.0.0
+_relver=1.0.0
+pkgrel=1
+pkgdesc="Designed to integrate with the character of the FirefoxOS, the Fira typefaces also aim to cover the legibility needs for a large range of handsets varying in screen quality and rendering."
+_tarname=Fira_Mono_Powerline
+url="https://github.com/powerline/fonts/tree/master/FiraMono"
+arch=(any)
+license=(custom)
+source=("$_tarname.zip::https://mpjcode.com/fonts/$_tarname-$_relver.zip")
+sha256sums=('df10eba08bd4107307ed43aebed446db3b4530bda51a64092336cd5d2699c726')
+
+package() {
+  cd $_tarname
+  install -d "$pkgdir/usr/share/fonts/${pkgname%-fonts}"
+  install -t "$pkgdir/usr/share/fonts/${pkgname%-fonts}" -m644 *.otf
+}
+
+# vim:set ts=2 sw=2 et:
