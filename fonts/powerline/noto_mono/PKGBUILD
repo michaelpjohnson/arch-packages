@@ -1,0 +1,22 @@
+# $Id$
+# Maintainer: Michael Johnson <michaelpjohnson@gmail.com>
+
+pkgname=noto_mono_powerline-fonts
+pkgver=1.0.0
+_relver=1.0.0
+pkgrel=1
+pkgdesc="Noto Mono Powerline."
+_tarname=Noto_Mono_Powerline
+url="https://github.com/powerline/fonts/blob/master/NotoMono/Noto%20Mono%20for%20Powerline.ttf"
+arch=(any)
+license=(custom)
+source=("$_tarname.zip::https://mpjcode.com/fonts/$_tarname-$_relver.zip")
+sha256sums=('f6b0f895a1b92be1e30dc279ed4cded1a5d879387795c81cf5794ecb42cb896f')
+
+package() {
+  cd $_tarname
+  install -d "$pkgdir/usr/share/fonts/${pkgname%-fonts}"
+  install -t "$pkgdir/usr/share/fonts/${pkgname%-fonts}" -m644 *.ttf
+}
+
+# vim:set ts=2 sw=2 et:
